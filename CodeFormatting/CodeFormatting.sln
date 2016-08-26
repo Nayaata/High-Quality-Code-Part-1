@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFormatting", "CodeFormatting\CodeFormatting.csproj", "{F22498E2-263C-4611-82C2-7D65369221A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bunnies", "Bunnies\Bunnies.csproj", "{AF15ECB7-E32F-428F-A2FF-67F717496A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{FD5FD7D9-0A4A-4CF2-9D99-A28592A26B05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F22498E2-263C-4611-82C2-7D65369221A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F22498E2-263C-4611-82C2-7D65369221A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F22498E2-263C-4611-82C2-7D65369221A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F22498E2-263C-4611-82C2-7D65369221A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF15ECB7-E32F-428F-A2FF-67F717496A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF15ECB7-E32F-428F-A2FF-67F717496A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF15ECB7-E32F-428F-A2FF-67F717496A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF15ECB7-E32F-428F-A2FF-67F717496A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD5FD7D9-0A4A-4CF2-9D99-A28592A26B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD5FD7D9-0A4A-4CF2-9D99-A28592A26B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD5FD7D9-0A4A-4CF2-9D99-A28592A26B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD5FD7D9-0A4A-4CF2-9D99-A28592A26B05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

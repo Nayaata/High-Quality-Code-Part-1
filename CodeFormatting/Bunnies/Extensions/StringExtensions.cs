@@ -9,7 +9,7 @@
     public static class StringExtensions
     {
         /// <summary>
-        /// SplitToSeparateWordsByUppercaseLetter must split each word by upper case letter by given string sequence
+        /// SplitToSeparateWordsByUppercaseLetter must split each word by upper case letter of given string sequence
         /// </summary>
         /// <param name="sequence">string sequence</param>
         /// <returns>builder</returns>
@@ -17,13 +17,14 @@
         {
             var probableStringMargin = 10;
             var probableStringSize = sequence.Length + probableStringMargin;
+
             var builder = new StringBuilder(probableStringSize);
 
             var singleWhitespace = ' ';
 
             foreach (var letter in sequence)
             {
-                if (Char.IsUpper(letter))
+                if (char.IsUpper(letter))
                 {
                     builder.Append(singleWhitespace);
                 }
