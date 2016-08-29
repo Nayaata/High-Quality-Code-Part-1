@@ -12,16 +12,28 @@
             private string name;
             private int points;
 
-            public string Име
+            public string Name
             {
-                get { return name; }
-                set { name = value; }
+                get 
+                { 
+                    return this.name; 
+                }
+                set 
+                { 
+                    this.name = value; 
+                }
             }
 
-            public int То4ки
+            public int Points
             {
-                get { return points; }
-                set { points = value; }
+                get 
+                {
+                    return this.points; 
+                }
+                set
+                {
+                    this.points = value;
+                }
             }
 
             public Points() 
@@ -30,8 +42,8 @@
 
             public Points(string name, int points)
             {
-                this.name = name;
-                this.points = points;
+                this.Name = name;
+                this.Points = points;
             }
         }
 
@@ -42,7 +54,9 @@
             char[,] bombite = slojibombite();
             int broya4 = 0;
             bool grum = false;
+
             List<Points> shampion4eta = new List<Points>(6);
+
             int red = 0;
             int kolona = 0;
             bool flag = true;
@@ -53,18 +67,22 @@
             {
                 if (flag)
                 {
-                    Console.WriteLine("Hajde da igraem na “Mini4KI”. Probvaj si kasmeta da otkriesh poleteta bez mini4ki." +
-                    " Komanda 'top' pokazva klasiraneto, 'restart' po4va nova igra, 'exit' izliza i hajde 4ao!");
+                    Console.WriteLine("Lets play to the game “Mines”. You can test your luck" +
+                    "Command 'top' show players count, 'restart' start new game, 'exit' stop the game and than say Good night!");
+
                     dumpp(poleto);
                     flag = false;
                 }
+
                 Console.Write("Daj red i kolona : ");
                 komanda = Console.ReadLine().Trim();
+
                 if (komanda.Length >= 3)
                 {
                     if (int.TryParse(komanda[0].ToString(), out red) &&
-                    int.TryParse(komanda[2].ToString(), out kolona) &&
-                        red <= poleto.GetLength(0) && kolona <= poleto.GetLength(1))
+                        int.TryParse(komanda[2].ToString(), out kolona) &&
+                        red <= poleto.GetLength(0) && 
+                        kolona <= poleto.GetLength(1))
                     {
                         komanda = "turn";
                     }
@@ -81,9 +99,11 @@
                         grum = false;
                         flag = false;
                         break;
+
                     case "exit":
                         Console.WriteLine("4a0, 4a0, 4a0!");
                         break;
+
                     case "turn":
                         if (bombite[red, kolona] != '*')
                         {
@@ -117,6 +137,7 @@
                         "Daj si niknejm: ", broya4);
                     string niknejm = Console.ReadLine();
                     Points t = new Points(niknejm, broya4);
+
                     if (shampion4eta.Count < 5)
                     {
                         shampion4eta.Add(t);
@@ -125,7 +146,7 @@
                     {
                         for (int i = 0; i < shampion4eta.Count; i++)
                         {
-                            if (shampion4eta[i].То4ки < t.То4ки)
+                            if (shampion4eta[i].Points < t.Points)
                             {
                                 shampion4eta.Insert(i, t);
                                 shampion4eta.RemoveAt(shampion4eta.Count - 1);
@@ -133,8 +154,9 @@
                             }
                         }
                     }
-                    shampion4eta.Sort((Points r1, Points r2) => r2.Име.CompareTo(r1.Име));
-                    shampion4eta.Sort((Points r1, Points r2) => r2.То4ки.CompareTo(r1.То4ки));
+
+                    shampion4eta.Sort((Points r1, Points r2) => r2.Name.CompareTo(r1.Name));
+                    shampion4eta.Sort((Points r1, Points r2) => r2.Points.CompareTo(r1.Points));
                     klasacia(shampion4eta);
 
                     poleto = create_igralno_pole();
@@ -168,13 +190,15 @@
         private static void klasacia(List<Points> to4kii)
         {
             Console.WriteLine("\nTo4KI:");
+
             if (to4kii.Count > 0)
             {
                 for (int i = 0; i < to4kii.Count; i++)
                 {
                     Console.WriteLine("{0}. {1} --> {2} kutii",
-                        i + 1, to4kii[i].Име, to4kii[i].То4ки);
+                        i + 1, to4kii[i].Name, to4kii[i].Points);
                 }
+
                 Console.WriteLine();
             }
             else
@@ -197,16 +221,20 @@
             int KKK = board.GetLength(1);
             Console.WriteLine("\n    0 1 2 3 4 5 6 7 8 9");
             Console.WriteLine("   ---------------------");
+
             for (int i = 0; i < RRR; i++)
             {
                 Console.Write("{0} | ", i);
+
                 for (int j = 0; j < KKK; j++)
                 {
                     Console.Write(string.Format("{0} ", board[i, j]));
                 }
+
                 Console.Write("|");
                 Console.WriteLine();
             }
+
             Console.WriteLine("   ---------------------\n");
         }
 
@@ -215,6 +243,7 @@
             int boardRows = 5;
             int boardColumns = 10;
             char[,] board = new char[boardRows, boardColumns];
+
             for (int i = 0; i < boardRows; i++)
             {
                 for (int j = 0; j < boardColumns; j++)
@@ -241,10 +270,12 @@
             }
 
             List<int> r3 = new List<int>();
+
             while (r3.Count < 15)
             {
                 Random random = new Random();
                 int asfd = random.Next(50);
+
                 if (!r3.Contains(asfd))
                 {
                     r3.Add(asfd);
@@ -255,6 +286,7 @@
             {
                 int kol = (i2 / Колони);
                 int red = (i2 % Колони);
+
                 if (red == 0 && i2 != 0)
                 {
                     kol--;
@@ -264,6 +296,7 @@
                 {
                     red++;
                 }
+
                 игрално_поле[kol, red - 1] = '*';
             }
 
@@ -350,6 +383,7 @@
                     brojkata++;
                 }
             }
+
             return char.Parse(brojkata.ToString());
         }
     }
