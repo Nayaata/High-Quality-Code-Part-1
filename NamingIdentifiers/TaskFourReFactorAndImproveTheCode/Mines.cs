@@ -49,19 +49,19 @@
 
         static void Main()
         {
-            string komanda = string.Empty;
-            char[,] poleto = create_igralno_pole();
-            char[,] bombite = slojibombite();
-            int broya4 = 0;
-            bool grum = false;
+            string command = string.Empty;
+            char[,] screen = CreatePlayerScreen();
+            char[,] bombs = PutTheBombs();
+            int timer = 0;
+            bool fire = false;
 
-            List<Points> shampion4eta = new List<Points>(6);
+            List<Points> champions = new List<Points>(6);
 
-            int red = 0;
-            int kolona = 0;
+            int row = 0;
+            int col = 0;
             bool flag = true;
-            const int maks = 35;
-            bool flag2 = false;
+            const int max = 35;
+            bool secondFlag = false;
 
             do
             {
@@ -70,118 +70,135 @@
                     Console.WriteLine("Lets play to the game “Mines”. You can test your luck" +
                     "Command 'top' show players count, 'restart' start new game, 'exit' stop the game and than say Good night!");
 
-                    dumpp(poleto);
+                    dumpp(screen);
                     flag = false;
                 }
 
                 Console.Write("Daj red i kolona : ");
-                komanda = Console.ReadLine().Trim();
+                command = Console.ReadLine().Trim();
 
-                if (komanda.Length >= 3)
+                if (command.Length >= 3)
                 {
-                    if (int.TryParse(komanda[0].ToString(), out red) &&
-                        int.TryParse(komanda[2].ToString(), out kolona) &&
-                        red <= poleto.GetLength(0) && 
-                        kolona <= poleto.GetLength(1))
+                    if (int.TryParse(command[0].ToString(), out row) &&
+                        int.TryParse(command[2].ToString(), out col) &&
+                        row <= screen.GetLength(0) && 
+                        col <= screen.GetLength(1))
                     {
-                        komanda = "turn";
+                        command = "turn";
                     }
                 }
-                switch (komanda)
+                switch (command)
                 {
                     case "top":
-                        klasacia(shampion4eta);
-                        break;
+                        {
+                            klasacia(champions);
+                            break;
+                        }
+
                     case "restart":
-                        poleto = create_igralno_pole();
-                        bombite = slojibombite();
-                        dumpp(poleto);
-                        grum = false;
-                        flag = false;
-                        break;
+                        {
+                            screen = CreatePlayerScreen();
+                            bombs = PutTheBombs();
+                            dumpp(screen);
+                            fire = false;
+                            flag = false;
+                            break;
+                        }
 
                     case "exit":
-                        Console.WriteLine("4a0, 4a0, 4a0!");
-                        break;
+                        {
+                            Console.WriteLine("4a0, 4a0, 4a0!");
+                            break;
+                        }
 
                     case "turn":
-                        if (bombite[red, kolona] != '*')
                         {
-                            if (bombite[red, kolona] == '-')
+                            if (bombs[row, col] != '*')
                             {
-                                tisinahod(poleto, bombite, red, kolona);
-                                broya4++;
-                            }
-                            if (maks == broya4)
-                            {
-                                flag2 = true;
+                                if (bombs[row, col] == '-')
+                                {
+                                    tisinahod(screen, bombs, row, col);
+                                    timer++;
+                                }
+                                if (max == timer)
+                                {
+                                    secondFlag = true;
+                                }
+                                else
+                                {
+                                    dumpp(screen);
+                                }
                             }
                             else
                             {
-                                dumpp(poleto);
+                                fire = true;
                             }
+                            break;
                         }
-                        else
-                        {
-                            grum = true;
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("\nGreshka! nevalidna Komanda\n");
-                        break;
-                }
-                if (grum)
-                {
-                    dumpp(bombite);
-                    Console.Write("\nHrrrrrr! Umria gerojski s {0} to4ki. " +
-                        "Daj si niknejm: ", broya4);
-                    string niknejm = Console.ReadLine();
-                    Points t = new Points(niknejm, broya4);
 
-                    if (shampion4eta.Count < 5)
+                    default:
+                        {
+                            Console.WriteLine("\nGreshka! nevalidna Komanda\n");
+                            break;
+                        }
+                }
+                if (fire)
+                {
+                    dumpp(bombs);
+
+                    Console.Write("\nHrrrrrr! Umria gerojski s {0} to4ki. " +
+                        "Daj si niknejm: ", timer);
+
+                    string nickName = Console.ReadLine();
+                    Points t = new Points(nickName, timer);
+
+                    if (champions.Count < 5)
                     {
-                        shampion4eta.Add(t);
+                        champions.Add(t);
                     }
                     else
                     {
-                        for (int i = 0; i < shampion4eta.Count; i++)
+                        for (int i = 0; i < champions.Count; i++)
                         {
-                            if (shampion4eta[i].Points < t.Points)
+                            if (champions[i].Points < t.Points)
                             {
-                                shampion4eta.Insert(i, t);
-                                shampion4eta.RemoveAt(shampion4eta.Count - 1);
+                                champions.Insert(i, t);
+                                champions.RemoveAt(champions.Count - 1);
                                 break;
                             }
                         }
                     }
 
-                    shampion4eta.Sort((Points r1, Points r2) => r2.Name.CompareTo(r1.Name));
-                    shampion4eta.Sort((Points r1, Points r2) => r2.Points.CompareTo(r1.Points));
-                    klasacia(shampion4eta);
+                    champions.Sort((Points r1, Points r2) => r2.Name.CompareTo(r1.Name));
+                    champions.Sort((Points r1, Points r2) => r2.Points.CompareTo(r1.Points));
 
-                    poleto = create_igralno_pole();
-                    bombite = slojibombite();
-                    broya4 = 0;
-                    grum = false;
+                    klasacia(champions);
+
+                    screen = CreatePlayerScreen();
+                    bombs = PutTheBombs();
+                    timer = 0;
+                    fire = false;
                     flag = true;
                 }
-                if (flag2)
+
+                if (secondFlag)
                 {
                     Console.WriteLine("\nBRAVOOOS! Otvri 35 kletki bez kapka kryv.");
-                    dumpp(bombite);
+                    dumpp(bombs);
                     Console.WriteLine("Daj si imeto, batka: ");
                     string imeee = Console.ReadLine();
-                    Points to4kii = new Points(imeee, broya4);
-                    shampion4eta.Add(to4kii);
-                    klasacia(shampion4eta);
-                    poleto = create_igralno_pole();
-                    bombite = slojibombite();
-                    broya4 = 0;
-                    flag2 = false;
+                    Points to4kii = new Points(imeee, timer);
+                    champions.Add(to4kii);
+                    klasacia(champions);
+                    screen = CreatePlayerScreen();
+                    bombs = PutTheBombs();
+                    timer = 0;
+                    secondFlag = false;
                     flag = true;
                 }
             }
-            while (komanda != "exit");
+
+            while (command != "exit");
             Console.WriteLine("Made in Bulgaria - Uauahahahahaha!");
             Console.WriteLine("AREEEEEEeeeeeee.");
             Console.Read();
@@ -238,7 +255,7 @@
             Console.WriteLine("   ---------------------\n");
         }
 
-        private static char[,] create_igralno_pole()
+        private static char[,] CreatePlayerScreen()
         {
             int boardRows = 5;
             int boardColumns = 10;
@@ -255,17 +272,17 @@
             return board;
         }
 
-        private static char[,] slojibombite()
+        private static char[,] PutTheBombs()
         {
-            int Редове = 5;
-            int Колони = 10;
-            char[,] игрално_поле = new char[Редове, Колони];
+            int rows = 5;
+            int cols = 10;
+            char[,] playerScreen = new char[rows, cols];
 
-            for (int i = 0; i < Редове; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < Колони; j++)
+                for (int j = 0; j < cols; j++)
                 {
-                    игрално_поле[i, j] = '-';
+                    playerScreen[i, j] = '-';
                 }
             }
 
@@ -284,23 +301,23 @@
 
             foreach (int i2 in r3)
             {
-                int kol = (i2 / Колони);
-                int red = (i2 % Колони);
+                int kol = (i2 / cols);
+                int red = (i2 % cols);
 
                 if (red == 0 && i2 != 0)
                 {
                     kol--;
-                    red = Колони;
+                    red = cols;
                 }
                 else
                 {
                     red++;
                 }
 
-                игрално_поле[kol, red - 1] = '*';
+                playerScreen[kol, red - 1] = '*';
             }
 
-            return игрално_поле;
+            return playerScreen;
         }
 
         private static void smetki(char[,] pole)
