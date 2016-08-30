@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskOneClass123", "TaskOneClass123\TaskOneClass123.csproj", "{3D601605-3430-4121-A258-D1AA5A3935E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.VariableConversion", "TaskOneClass123\Task1.VariableConversion.csproj", "{3D601605-3430-4121-A258-D1AA5A3935E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTwoRenaming", "TaskTwoRenaming\TaskTwoRenaming.csproj", "{A7265554-C16A-4E9E-81B9-E8D372E8A202}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2.People", "TaskTwoRenaming\Task2.People.csproj", "{A7265554-C16A-4E9E-81B9-E8D372E8A202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFourReFactorAndImproveTheCode", "TaskFourReFactorAndImproveTheCode\TaskFourReFactorAndImproveTheCode.csproj", "{98665F1D-4604-4C4E-A707-9DFD104F32AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.Minesweeper", "TaskFourReFactorAndImproveTheCode\Task4.Minesweeper.csproj", "{98665F1D-4604-4C4E-A707-9DFD104F32AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
