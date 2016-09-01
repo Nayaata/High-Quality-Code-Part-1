@@ -14,7 +14,7 @@
     public static class StringExtensions
     {
         /// <summary>
-        /// Current method ToMd5Hash convert input string to hexadecimal
+        /// Current static method ToMd5Hash convert input string to hexadecimal
         /// </summary>
         /// <param name="input">The input parameter should be string</param>
         /// <returns>Return hexadecimal string</returns>
@@ -37,7 +37,7 @@
         /// <summary>
         /// Convert input string to boolean
         /// </summary>
-        /// <param name="input">Input parameter must be string</param>
+        /// <param name="input">The input parameter must be string</param>
         /// <returns>Return boolean true/false value</returns>
         public static bool ToBoolean(this string input)
         {
@@ -48,7 +48,7 @@
         /// <summary>
         /// Convert input string to short
         /// </summary>
-        /// <param name="input">input string</param>
+        /// <param name="input">The input string</param>
         /// <returns>Return short value</returns>
         public static short ToShort(this string input)
         {
@@ -60,7 +60,7 @@
         /// <summary>
         /// Convert input string to integer
         /// </summary>
-        /// <param name="input">Input oarameter should be string</param>
+        /// <param name="input">The input parameter should be string</param>
         /// <returns>Return integer value</returns>
         public static int ToInteger(this string input)
         {
@@ -72,7 +72,7 @@
         /// <summary>
         /// Convert input string to long
         /// </summary>
-        /// <param name="input">input string</param>
+        /// <param name="input">The input string</param>
         /// <returns>Return long value</returns>
         public static long ToLong(this string input)
         {
@@ -84,7 +84,7 @@
         /// <summary>
         /// Convert input string to DateTime
         /// </summary>
-        /// <param name="input">input string</param>
+        /// <param name="input">The input string</param>
         /// <returns>Return DateTime value</returns>
         public static DateTime ToDateTime(this string input)
         {
@@ -94,10 +94,10 @@
         }
 
         /// <summary>
-        /// 
+        /// Capitalizes the first letter of an input string
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">The input string</param>
+        /// <returns>Return new string with a capitalized first letter</returns>
         public static string CapitalizeFirstLetter(this string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -109,29 +109,32 @@
         }
 
         /// <summary>
-        /// 
+        /// Get some substring of an input string
         /// </summary>
-        /// <param name="input"></param>
-        /// <param name="startString"></param>
-        /// <param name="endString"></param>
-        /// <param name="startFrom"></param>
-        /// <returns></returns>
+        /// <param name="input">The input string from wich take the substring</param>
+        /// <param name="startString">The startString param is the start point for the substring</param>
+        /// <param name="endString">The endString param is the end point for the current substring</param>
+        /// <param name="startFrom">The int startFrom param is the starting index</param>
+        /// <returns>Returns subString (between startString and andString) of given input string</returns>
         public static string GetStringBetween(this string input, string startString, string endString, int startFrom = 0)
         {
             input = input.Substring(startFrom);
             startFrom = 0;
+
             if (!input.Contains(startString) || !input.Contains(endString))
             {
                 return string.Empty;
             }
 
             var startPosition = input.IndexOf(startString, startFrom, StringComparison.Ordinal) + startString.Length;
+
             if (startPosition == -1)
             {
                 return string.Empty;
             }
 
             var endPosition = input.IndexOf(endString, startPosition, StringComparison.Ordinal);
+
             if (endPosition == -1)
             {
                 return string.Empty;
@@ -141,10 +144,10 @@
         }
 
         /// <summary>
-        /// 
+        /// Convert all Cyrillic to their Latin letters representation
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">The input string</param>
+        /// <returns>Return changed input string with Latin letters</returns>
         public static string ConvertCyrillicToLatinLetters(this string input)
         {
             var bulgarianLetters = new[]
@@ -168,10 +171,10 @@
         }
 
         /// <summary>
-        /// 
+        /// Convert Latin to their Cyrillic Keyboard letters representation
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">The input string</param>
+        /// <returns>Return changed input string with Cyrillic Keyboard letters</returns>
         public static string ConvertLatinToCyrillicKeyboard(this string input)
         {
             var latinLetters = new[]
@@ -197,10 +200,10 @@
         }
 
         /// <summary>
-        /// 
+        /// Convert input string from Cyrillic to Latin letters, check for valid username and replace forbidden characters
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">The input string</param>
+        /// <returns>Return the validated username as string</returns>
         public static string ToValidUsername(this string input)
         {
             input = input.ConvertCyrillicToLatinLetters();
@@ -208,10 +211,10 @@
         }
 
         /// <summary>
-        /// 
+        /// Convert input string from Cyrillic to Latin letters and check for valid file name
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">The input string</param>
+        /// <returns>Return the validated file name</returns>
         public static string ToValidLatinFileName(this string input)
         {
             input = input.Replace(" ", "-").ConvertCyrillicToLatinLetters();
@@ -219,21 +222,21 @@
         }
 
         /// <summary>
-        /// 
+        /// Get the first Char of given input string
         /// </summary>
-        /// <param name="input"></param>
-        /// <param name="charsCount"></param>
-        /// <returns></returns>
+        /// <param name="input">The input string</param>
+        /// <param name="charsCount">Int charsCount represent total count of chars in given string</param>
+        /// <returns>Return first char of given input string as single char string</returns>
         public static string GetFirstCharacters(this string input, int charsCount)
         {
             return input.Substring(0, Math.Min(input.Length, charsCount));
         }
 
         /// <summary>
-        /// 
+        /// Get file extension of given fileName string
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
+        /// <param name="fileName">String fileName representing a file path</param>
+        /// <returns>Return file extension as string</returns>
         public static string GetFileExtension(this string fileName)
         {
             if (string.IsNullOrWhiteSpace(fileName))
@@ -242,6 +245,7 @@
             }
 
             string[] fileParts = fileName.Split(new[] { "." }, StringSplitOptions.None);
+
             if (fileParts.Count() == 1 || string.IsNullOrEmpty(fileParts.Last()))
             {
                 return string.Empty;
@@ -251,10 +255,10 @@
         }
 
         /// <summary>
-        /// 
+        /// Convert file extension string to file content type
         /// </summary>
-        /// <param name="fileExtension"></param>
-        /// <returns></returns>
+        /// <param name="fileExtension">File extension string</param>
+        /// <returns>Return content type matched to the file extension</returns>
         public static string ToContentType(this string fileExtension)
         {
             var fileExtensionToContentType = new Dictionary<string, string>
@@ -280,10 +284,10 @@
         }
 
         /// <summary>
-        /// 
+        /// Convert input string to byte Array
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">The input string</param>
+        /// <returns>Return new byte Array</returns>
         public static byte[] ToByteArray(this string input)
         {
             var bytesArray = new byte[input.Length * sizeof(char)];
