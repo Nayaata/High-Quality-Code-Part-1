@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.ClassSize", "Task1.ClassSize\Task1.ClassSize.csproj", "{3B3FF25B-F198-46DB-8DA8-FF63C22AEAA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2.MethodPrintStatistics", "Task2.MethodPrintStatistics\Task2.MethodPrintStatistics.csproj", "{3F16C3D8-C08C-4EA9-A7AC-08AAFF0F1D96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B3FF25B-F198-46DB-8DA8-FF63C22AEAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3FF25B-F198-46DB-8DA8-FF63C22AEAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3FF25B-F198-46DB-8DA8-FF63C22AEAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3FF25B-F198-46DB-8DA8-FF63C22AEAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F16C3D8-C08C-4EA9-A7AC-08AAFF0F1D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F16C3D8-C08C-4EA9-A7AC-08AAFF0F1D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F16C3D8-C08C-4EA9-A7AC-08AAFF0F1D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F16C3D8-C08C-4EA9-A7AC-08AAFF0F1D96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
