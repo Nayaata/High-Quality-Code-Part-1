@@ -110,8 +110,6 @@ namespace Task2.MethodPrintStatistics
         {
             Console.WriteLine("{0:F2}", valueTpPrint);
         }
-
-
     }
 }
  */
