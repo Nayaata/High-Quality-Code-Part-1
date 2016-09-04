@@ -2,7 +2,7 @@
 
 namespace Task1.ClassChef
 {
-    public class Bowl : Vegetable
+    public class Bowl
     {
         private IList<IVegetable> vegetables;
 

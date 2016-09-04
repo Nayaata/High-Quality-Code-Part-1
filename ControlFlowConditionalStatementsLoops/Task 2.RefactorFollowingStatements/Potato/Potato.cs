@@ -6,9 +6,9 @@
         {
         }
 
-        public bool IsPilled { get; set; }
+        public bool IsPeeled { get; set; }
 
-        public bool IsNotRotten { get; set; }
+        public bool IsRotten { get; set; }
 
         public bool IsCooked { get; set; }
     }

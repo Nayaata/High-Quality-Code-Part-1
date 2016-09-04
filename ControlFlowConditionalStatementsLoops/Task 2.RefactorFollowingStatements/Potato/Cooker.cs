@@ -7,7 +7,7 @@
 
             if (potato != null)
             {
-                if (potato.IsPilled && potato.IsNotRotten)
+                if (potato.IsPeeled && potato.IsRotten)
                 {
                     return true;
                 }
