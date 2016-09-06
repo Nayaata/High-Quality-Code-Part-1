@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.QualityMethods", "Task1.QualityMethods\Task1.QualityMethods.csproj", "{264C5210-9A80-49D5-B68B-D28120CF482E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2.RefactorCSharp2Exam", "Task2.RefactorCSharp2Exam\Task2.RefactorCSharp2Exam.csproj", "{FEBE0686-A3EB-4B0C-8762-5621383D5530}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{264C5210-9A80-49D5-B68B-D28120CF482E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264C5210-9A80-49D5-B68B-D28120CF482E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264C5210-9A80-49D5-B68B-D28120CF482E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264C5210-9A80-49D5-B68B-D28120CF482E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEBE0686-A3EB-4B0C-8762-5621383D5530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEBE0686-A3EB-4B0C-8762-5621383D5530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEBE0686-A3EB-4B0C-8762-5621383D5530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEBE0686-A3EB-4B0C-8762-5621383D5530}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

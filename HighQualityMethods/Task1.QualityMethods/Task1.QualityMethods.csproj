@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>c158f79d-bf5b-41f0-b1bb-e8f16fc74e9b</ProjectGuid>
+    <ProjectGuid>{264C5210-9A80-49D5-B68B-D28120CF482E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Task1.QualityMethods</RootNamespace>
@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Enumerations\FormatType.cs" />
+    <Compile Include="Enumerations\PositionType.cs" />
+    <Compile Include="Utils\MethodCalculation.cs" />
+    <Compile Include="MethodStartup.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
