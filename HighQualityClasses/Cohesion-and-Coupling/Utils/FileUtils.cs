@@ -1,9 +1,12 @@
-﻿using System;
-
-namespace CohesionAndCoupling
+﻿namespace CohesionAndCoupling
 {
     public static class FileUtils
     {
+        /// <summary>
+        /// Get file extension of given string file name.
+        /// </summary>
+        /// <param name="fileName">String fileName is the input parameter.</param>
+        /// <returns>Extension as string, otherwise empty string.</returns>
         public static string GetFileExtension(string fileName)
         {
             int indexOfLastDot = fileName.LastIndexOf(".");
@@ -18,6 +21,11 @@ namespace CohesionAndCoupling
             return extension;
         }
 
+        /// <summary>
+        ///  Get file name without extension of given string file name.
+        /// </summary>
+        /// <param name="fileName">String fileName is the input parameter.</param>
+        /// <returns>File name without extension as string.</returns>
         public static string GetFileNameWithoutExtension(string fileName)
         {
             int indexOfLastDot = fileName.LastIndexOf(".");

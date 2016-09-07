@@ -1,16 +1,12 @@
 ﻿namespace InheritanceAndPolymorphism
 {
+    using InheritanceAndPolymorphism.Models;
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using InheritanceAndPolymorphism.Models;
 
     public class Course : ICourse
     {
-        private const string InvalidCourseName_ExceptionMessage = "Course name cannot be null or empty.";
-        private const string InvalidTeacherName_ExceptionMessage = "Teacher name cannot be null or empty.";
-        private const string InvalidStudentName_ExceptionMessage = "Student name cannot be null or empty.";
-
         private string name;
         private string teacherName;
         private IList<string> students;
@@ -43,7 +39,7 @@
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException(InvalidCourseName_ExceptionMessage);
+                    throw new ArgumentException("Course name cannot be null or empty.");
                 }
 
                 this.name = value;
@@ -60,7 +56,7 @@
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException(InvalidTeacherName_ExceptionMessage);
+                    throw new ArgumentException("Teacher name cannot be null or empty.");
                 }
 
                 this.teacherName = value;
@@ -70,22 +66,31 @@
 
         public IList<string> Students { get; private set; }
 
+        /// <summary>
+        /// Add students in course. Otherwise if student is null or white space, throws ArgumentException.
+        /// </summary>
+        /// <param name="students">string[] students</param>
         public void AddStudents(params string[] students)
         {
             foreach (var student in students)
             {
                 if (string.IsNullOrWhiteSpace(student))
                 {
-                    throw new ArgumentException(InvalidStudentName_ExceptionMessage);
+                    throw new ArgumentException("Student name cannot be null or empty.");
                 }
 
                 this.Students.Add(student);
             }
         }
 
+        /// <summary>
+        /// Get student and using strin format method.
+        /// </summary>
+        /// <returns>Converted student as formatted string.</returns>
         public string GetStudentsAsString()
         {
             string students = string.Format("{{ {0} }}", string.Join(", ", this.Students));
+
             return students;
         }
 

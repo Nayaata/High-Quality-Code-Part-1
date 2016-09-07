@@ -14,8 +14,8 @@
             Console.WriteLine(FileUtils.GetFileNameWithoutExtension("example.pdf"));
             Console.WriteLine(FileUtils.GetFileNameWithoutExtension("example.new.pdf"));
 
-            Console.WriteLine("Distance in the 2D space = {0:f2}", CalculateUtils.CalculateDistance2D(1, -2, 3, 4));
-            Console.WriteLine("Distance in the 3D space = {0:f2}", CalculateUtils.CalculateDistance3D(5, 2, -1, 3, -6, 4));
+            Console.WriteLine("Distance in the 2D space = {0:f2}", GeometryUtils.CalculateDistance2D(1, -2, 3, 4));
+            Console.WriteLine("Distance in the 3D space = {0:f2}", GeometryUtils.CalculateDistance3D(5, 2, -1, 3, -6, 4));
 
             Paralelepiped paralelepiped = new Paralelepiped(3.0, 4.0, 5.0);
 

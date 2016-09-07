@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utils\CalculateUtils.cs" />
+    <Compile Include="Utils\GeometryUtils.cs" />
     <Compile Include="Models\Paralelepiped.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utils\FileUtils.cs" />

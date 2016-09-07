@@ -6,7 +6,6 @@
 
     public class OffsiteCourse : Course
     {
-        private const string InvalidTownName_ExceptionMessage = "Town name cannot be null or empty.";
         private string town;
 
         public OffsiteCourse(string courseName, string teacherName, IList<string> students, string town)
@@ -26,7 +25,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException(OffsiteCourse.InvalidTownName_ExceptionMessage);
+                    throw new ArgumentException("Town name cannot be null or empty.");
                 }
 
                 this.town = value;
