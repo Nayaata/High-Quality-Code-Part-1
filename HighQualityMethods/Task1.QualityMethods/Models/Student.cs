@@ -16,10 +16,14 @@
 
         public DateTime BirthDate { get; set; }
 
-
-        public bool IsOlderThan(Student other)
+        /// <summary>
+        /// Check which one of two students is older by birth date
+        /// </summary>
+        /// <param name="otherStudent">Student otherStudent is the second student</param>
+        /// <returns>Return true if current student is younger than the other, otherwise return false</returns>
+        public bool IsOlderThan(Student otherStudent)
         {
-            return this.BirthDate < other.BirthDate;
+            return this.BirthDate < otherStudent.BirthDate;
         }
 
     }

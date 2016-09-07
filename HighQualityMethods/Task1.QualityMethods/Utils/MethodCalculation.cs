@@ -5,6 +5,13 @@
 
     internal class MethodCalculation
     {
+        /// <summary>
+        /// Calculate triangle area by given three sides, using maths formulas and calculation of the area is with Math.Sqrt
+        /// </summary>
+        /// <param name="sideA">double sideA is the first of the given sides</param>
+        /// <param name="sideB">double sideB is the second given side</param>
+        /// <param name="sideC">double sideC is the third given side</param>
+        /// <returns>The area of the triangle as double number, otherwise throws ArgumentException</returns>
         internal static double CalculateTriangleArea(double sideA, double sideB, double sideC)
         {
             if (sideA <= 0 || sideB <= 0 || sideC <= 0)
@@ -18,6 +25,11 @@
             return area;
         }
 
+        /// <summary>
+        /// Convert given digit to its word representation using switch-case statements
+        /// </summary>
+        /// <param name="number">int number is the input digit</param>
+        /// <returns>Digit as word, otherwise throws ArgumentException</returns>
         internal static string ConvertDigitToWordRepresentation(int number)
         {
             switch (number)
@@ -70,6 +82,11 @@
             }
         }
 
+        /// <summary>
+        /// Find the maximum value in given int collection of elements
+        /// </summary>
+        /// <param name="elements"></param>
+        /// <returns>The value of the max element, otherwise if the element is null or empty throws ArgumentNullException</returns>
         internal static int FindMaxValueInCollection(params int[] elements)
         {
             var length = elements.Length;
@@ -89,6 +106,11 @@
             return elements[0];
         }
 
+        /// <summary>
+        /// Print given number as formatted string. Using switch-case statement and enumeration types for every different format.
+        /// </summary>
+        /// <param name="number">object number is the input number.</param>
+        /// <param name="format">FormatType format is the input format.</param>
         internal static void PrintNumberAsFormattedString(object number, FormatType format)
         {
             switch (format)
@@ -115,6 +137,14 @@
             }
         }
 
+        /// <summary>
+        /// Get the line position by given coordinates points. Using enumeration types for the different line positions.
+        /// </summary>
+        /// <param name="firstPointX">double firstPointX</param>
+        /// <param name="firstPointY">double firstPointY</param>
+        /// <param name="secondPointX">double secondPointX</param>
+        /// <param name="secondPointY">double secondPointY</param>
+        /// <returns></returns>
         internal static Position GetLinePosition(double firstPointX, double firstPointY, double secondPointX, double secondPointY)
         {
             if (firstPointX == secondPointX && firstPointY == secondPointY)
@@ -135,6 +165,14 @@
             }
         }
 
+        /// <summary>
+        /// Calculate the distan
+        /// </summary>
+        /// <param name="firstPointX">double firstPointX</param>
+        /// <param name="firstPointY">double firstPointY</param>
+        /// <param name="secondPointX">double secondPointX</param>
+        /// <param name="secondPointY">secondPointY</param>
+        /// <returns>The calculated distance az double number.</returns>
         internal static double CalculateDistanceBetweenPoints(double firstPointX, double firstPointY, double secondPointX, double secondPointY)
         {
             double productX = (secondPointX - firstPointX) * (secondPointX - firstPointX);

@@ -4,7 +4,12 @@
 
     internal class Message
     {
-        internal static int GetMessageNumbers(string input)
+        /// <summary>
+        /// Cnvert given string message to its number representation.
+        /// </summary>
+        /// <param name="input">string input</param>
+        /// <returns>Converted input string as number, otherwise throws ArgumentException.</returns>
+        internal static int GetMessageToNumbers(string input)
         {
             switch (input)
             {
@@ -24,6 +29,11 @@
 
         }
 
+        /// <summary>
+        /// Convert given string message to number in given numeric system.Using GetMessageToNumbers(); method
+        /// </summary>
+        /// <param name="input">string input</param>
+        /// <returns>converted input string to number represented as string.</returns>
         internal static string ConvertMessageToNumber(string input)
         {
             int position = input.Length / 3 - 1;
@@ -32,7 +42,7 @@
             for (int i = 0; i < input.Length; i += 3)
             {
                 string currentDigit = input.Substring(i, 3);
-                result += GetMessageNumbers(currentDigit);
+                result += GetMessageToNumbers(currentDigit);
                 position--;
             }
 
